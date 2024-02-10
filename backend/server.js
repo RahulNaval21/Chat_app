@@ -2,6 +2,7 @@ const express = require("express");
 const { chats } = require("./data/data");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
+const colors = require("colors");
 
 const app = express();
 dotenv.config();
@@ -24,4 +25,4 @@ app.get("/api/chat/:id", (req, res) => {
 
 //const PORT = process.env.PORT || 5000;
 
-app.listen(5000, console.log(`app running on 5000`));
+app.listen(5000, console.log(`app running on 5000`.yellow.bold));
