@@ -15,6 +15,8 @@ const Login = () => {
   const [password, setPassword] = useState();
   const [loading, setLoading] = useState(false);
 
+  const history = useHistory();
+
   const submitHandler = async () => {
     setLoading(true);
     if (!email || !password) {
@@ -51,6 +53,7 @@ const Login = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
+      history.push("/chats");
     } catch (error) {
       toast({
         title: "Error Occured!",
